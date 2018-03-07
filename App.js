@@ -1,30 +1,27 @@
-import React from 'react';
-import Main from'./app/components/Main';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import TaskItem from './app/components/TaskItem';
+import Main from './app/component/Main';
+import TaskItem from './TaskItem';
 
-export default class App extends React.Component {
+
+export default class TaskItemApp extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Main />
-        <TaskItem
-          description="Draft 3 ideas for seminar presentation"
-          done={new Date()}
-          priority={4}
+        <View style={styles.container}> 
+      
+        
+        
+        <TaskItem style={styles.date}
+          //description="Draft 3 ideas for seminar presentation"
+          //done={new Date()}
+          //priority={4}
           deadline={new Date(2018,1,23,12)}
           tags={["#brainstorm", "#focus"]}
         />
-        <TaskItem
-          description="Buy milk"
-          done={null}
-          priority={4}
-          deadline={null}
-          tags={["#errand"]}
-        />
-
-
-        
+            <Main/>
+            
+            <View>
+        </View>
       </View>
     );
   }
@@ -33,6 +30,14 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-   
+    backgroundColor: '#fff',
+  
+    justifyContent: 'center',
   },
+  date:{
+    backgroundColor:'red',
+    color:'red',
+  textAlign:'center',
+  }
 });
+
